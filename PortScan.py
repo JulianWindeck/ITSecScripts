@@ -20,6 +20,7 @@ default_ports = {
 def isOpen(ip, port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     if s.connect_ex((ip, port)) == 0:
+        s.close()
         return True
     return False
 
